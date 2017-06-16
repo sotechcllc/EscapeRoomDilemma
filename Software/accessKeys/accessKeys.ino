@@ -7,7 +7,7 @@
 || | Demonstrates changing the keypad size and key values.
 || #
 */
-#include <Keypad.h>
+#include "Keypad.h"
 
 const byte ROWS = 4; //four rows
 const byte COLS = 4; //four columns
