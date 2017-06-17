@@ -1,6 +1,6 @@
 
-const int nMOS1 = 2;
-const int nMOS2 = 3;
+const int nMOS1 = 52;
+const int nMOS2 = 50;
 
 void setup() {
   pinMode(nMOS1, OUTPUT);
