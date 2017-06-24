@@ -10,11 +10,13 @@
 
 /// Import Libraries and/or Modules
 #include "KeypadSetup.h"
+#include "Adafruit_RA8875Setup.h"
 
 
 void setup() {
 
   Serial.begin(9600);
+  RA8875Setup();
 
 }
 
