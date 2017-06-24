@@ -44,13 +44,13 @@ void RA8875Setup() {
     //[31] = "Enter Activation Sequence A1: ";
 
     /* Change the cursor location and color ... */  
-    tft.textSetCursor(100, 100);
-    tft.textColor(RA8875_RED, RA8875_MAGENTA);
+    tft.textSetCursor(50, 100);
+    tft.textColor(RA8875_BLUE, RA8875_MAGENTA);
     /* If necessary, enlarge the font */
     tft.textEnlarge(2);
     /* ... and render some more text! */
     tft.textWrite(title);
-    tft.textSetCursor(100, 150);
+    tft.textSetCursor(50, 150);
     tft.textEnlarge(1);
     tft.textWrite(instruction_zero);
   

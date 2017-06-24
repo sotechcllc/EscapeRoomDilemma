@@ -11,7 +11,7 @@
 /// Import Libraries and/or Modules
 #include "KeypadSetup.h"
 #include "Adafruit_RA8875Setup.h"
-
+#include "ParseInput.h"
 
 void setup() {
 
@@ -25,7 +25,7 @@ void loop() {
   char customKey = customKeypad.getKey();
   
   if (customKey){
-    Serial.println(customKey);
+    ParseInput(customKey);
   }
 
 }
