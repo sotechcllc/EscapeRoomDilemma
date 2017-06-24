@@ -11,6 +11,7 @@
 /// Import Libraries and/or Modules
 #include "KeypadSetup.h"
 #include "Adafruit_RA8875Setup.h"
+#include "ScenarioSetup.h"
 #include "ParseInput.h"
 
 void setup() {
