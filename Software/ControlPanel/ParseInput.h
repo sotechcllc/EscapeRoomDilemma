@@ -6,10 +6,25 @@
  * Fluvio L Lobo Fenoglietto 06/24/2017 
  */
 
+//  Delete Last Input
+//    The following function deletes the last user input character  
+
+
+//  Consolidate Input
+//    The following fuction concatenates the user input  
 void ConsolidateInput(char KeyInput) {
 
-  user_input = concat(user_input, KeyInput);
+  user_input += KeyInput;
+  
   Serial.println(user_input);
+
+  // Delete Last Character
+  if (KeyInput == 'D') {
+    int input_len = user_input.length();        // Determine length of user input
+    Serial.println(input_len);
+    user_input.remove(input_len - 2);
+    Serial.println(user_input);
+  }
   
 }
 
