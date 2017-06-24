@@ -15,8 +15,8 @@
 
 void setup() {
 
-  Serial.begin(9600);
-  RA8875Setup();
+  Serial.begin(9600);                 // Setup serial communication
+  RA8875Setup();                      // Setup screen
 
 }
 
