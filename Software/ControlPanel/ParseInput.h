@@ -7,14 +7,16 @@
  */
 
 
-
+//  Delete Last Input
+//    The following fuction deletes the last input on the string 
 String DeleteLastInput(String user_input) {
   
   input_len = user_input.length();
   user_input.remove(input_len - 1);
   Serial.println(user_input);
   return user_input;
-}
+  
+} // End of DeleteLastInput()
 
 void VerifyPassword(int mode, String user_input) {
 
