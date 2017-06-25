@@ -15,10 +15,11 @@ int mode = 0;                       // Initial mode, "want to play?"
 //       = 4;                       // Fourth password
 //       = 5;                       // Fifth password
 
-String user_input         = "";
+String  user_input            = "";
+int     input_len             = 0;
 
-char password_one[3]      = "29";
-char password_two[4]      = "367";
-char password_third[5]    = "2451";
-char password_four[5]     = "*318";
-char password_five[5]     = "###0";
+char    password_one[3]       = "29";
+char    password_two[4]       = "367";
+char    password_third[5]     = "2451";
+char    password_four[5]      = "*318";
+char    password_five[5]      = "###0";
