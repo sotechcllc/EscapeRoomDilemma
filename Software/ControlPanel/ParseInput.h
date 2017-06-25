@@ -8,6 +8,14 @@
 
 
 
+String DeleteLastInput(String user_input) {
+  
+  input_len = user_input.length();
+  user_input.remove(input_len - 1);
+  Serial.println(user_input);
+  return user_input;
+}
+
 void VerifyPassword(int mode, String user_input) {
 
   switch (mode) {
@@ -23,9 +31,10 @@ void ConsolidateInput(char KeyInput) {
   switch (KeyInput) {
 
     case 'D': // Delete Last Input
-      input_len = user_input.length();
-      user_input.remove(input_len - 1);
-      Serial.println(user_input);
+      user_input = DeleteLastInput(user_input);
+      //input_len = user_input.length();
+      //user_input.remove(input_len - 1);
+      //Serial.println(user_input);
       break;
     case 'A': // Submit Input
       
