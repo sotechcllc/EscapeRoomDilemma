@@ -26,7 +26,7 @@ void loop() {
   char customKey = customKeypad.getKey();
   
   if (customKey){
-    ParseInput(customKey);
+    ParseInput(mode, customKey);
   }
 
 }
