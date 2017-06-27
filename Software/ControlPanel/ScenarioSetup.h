@@ -18,7 +18,7 @@ int mode                      = 0;                // Initial mode, "want to play
 String  user_input            = "";
 int     input_len             = 0;
 
-char    password_zero[2]      = "1";
+String  password_zero         = "1";
 char    password_one[3]       = "29";
 char    password_two[4]       = "367";
 char    password_third[5]     = "2451";

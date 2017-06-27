@@ -20,12 +20,16 @@ String DeleteLastInput(String user_input) {
 
 //  Verify Password
 //    The following fuction compares the current input to the stored algorithms
-void VerifyPassword(int mode, String user_input) {
-
+int VerifyPassword(int mode, String user_input) {
+  
   switch (mode) {
 
     case 0:
       Serial.println("mode = 0");
+      if (user_input.equals(password_zero)) {
+        Serial.println("Correct input, moving to mode = 1");
+        mode = 1;
+      }
       break;
     case 1:
       Serial.println("mode = 1");
@@ -35,6 +39,8 @@ void VerifyPassword(int mode, String user_input) {
       break;
     
   } // End of Mode switch
+
+  return mode;
 
 }
 
@@ -47,7 +53,7 @@ void ConsolidateInput(char KeyInput) {
   
 } // End of ConsolidateInput
 
-void ParseInput(int mode, char KeyInput) {
+int ParseInput(int mode, char KeyInput) {
 
   switch (KeyInput) {
 
@@ -55,13 +61,15 @@ void ParseInput(int mode, char KeyInput) {
       user_input = DeleteLastInput(user_input);
       break;
     case 'A': // Submit Input
-      VerifyPassword(mode, user_input);
+      mode = VerifyPassword(mode, user_input);
       break;
     default: // Consolidate Input
       ConsolidateInput(KeyInput);
       break;
     
   } // End of KeyInput switch
+
+  return mode;
   
 } // End of ParseInput()
 
