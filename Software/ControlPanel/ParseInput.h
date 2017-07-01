@@ -28,6 +28,7 @@ int VerifyPassword(int mode, String user_input) {
       Serial.println("mode = 0");
       if (user_input.equals(password_zero)) {
         Serial.println("Correct input, moving to mode = 1");
+        loadingSequence();
         mode = 1;
       }
       break;
