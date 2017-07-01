@@ -25,12 +25,22 @@ char    password_third[5]     = "2451";
 char    password_four[5]      = "*318";
 char    password_five[5]      = "###0";
 
+
+/// Scenario ONE
+// First password
+void scenarioOne() {
+  
+  tft.fillScreen(RA8875_BLACK);
+  
+}
+
 /// SCENE: Starting
 // The following function simulates a "start-up routine" after submitting an answer to the startup screen
 void loadingSequence() {
 
-  tft.fillScreen(RA8875_BLACK);
+  //tft.fillScreen(RA8875_BLACK);
   tft.textMode();
+  
   char title[19] = "STARTING SEQUENCE ";
   tft.textSetCursor(100, 150);
   tft.textColor(RA8875_BLUE, RA8875_RED);
@@ -53,9 +63,8 @@ void loadingSequence() {
     tft.textEnlarge(3);
     tft.textWrite(loading_symbol);
     delay(500);
-  }
+  } // End of loading graphics loop
+
+  scenarioOne();
   
 } // End of loadingSequence()
-
-/// Scenario ONE
-// First password
