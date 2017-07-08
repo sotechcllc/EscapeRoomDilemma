@@ -31,6 +31,26 @@ char    password_five[5]      = "###0";
 void scenarioOne() {
   
   tft.fillScreen(RA8875_BLACK);
+  tft.textMode();
+  
+  char title[19] = "ENTER SEQUENCE 1:";
+  tft.textSetCursor(100, 150);
+  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textEnlarge(3);  
+  tft.textWrite(title);
+
+  char spacing[19] = "                  ";
+  tft.textSetCursor(100, 225);
+  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textEnlarge(3);  
+  tft.textWrite(spacing);
+
+  char display_input[10];
+  user_input.toCharArray(display_input,10);
+  tft.textSetCursor(100, 300);
+  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textEnlarge(3);  
+  tft.textWrite(display_input);
   
 }
 
@@ -62,7 +82,7 @@ void loadingSequence() {
     tft.textColor(RA8875_BLUE, RA8875_RED);
     tft.textEnlarge(3);
     tft.textWrite(loading_symbol);
-    delay(500);
+    delay(200);
   } // End of loading graphics loop
 
   scenarioOne();

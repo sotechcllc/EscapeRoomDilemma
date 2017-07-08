@@ -54,6 +54,13 @@ void ConsolidateInput(char KeyInput) {
   
 } // End of ConsolidateInput
 
+/*
+ * Parse Input
+ *  The Parse Input function operates on the user input based on the key pressed
+ *  D   - Delete last input (continuos)
+ *  A   - Submit input
+ *  def - Consolidate input (build input string) 
+ */
 int ParseInput(int mode, char KeyInput) {
 
   switch (KeyInput) {
@@ -66,6 +73,9 @@ int ParseInput(int mode, char KeyInput) {
       break;
     default: // Consolidate Input
       ConsolidateInput(KeyInput);
+      if (mode > 0) {
+        scenarioOne();
+      }
       break;
     
   } // End of KeyInput switch
