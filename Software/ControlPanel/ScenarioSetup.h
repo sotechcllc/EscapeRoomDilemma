@@ -39,20 +39,14 @@ void scenarioOne() {
   tft.textEnlarge(3);  
   tft.textWrite(title);
 
-  char spacing[19] = "                  ";
-  tft.textSetCursor(100, 225);
-  tft.textColor(RA8875_BLUE, RA8875_RED);
-  tft.textEnlarge(3);  
-  tft.textWrite(spacing);
-
   char display_input[10];
   user_input.toCharArray(display_input,10);
-  tft.textSetCursor(100, 300);
+  tft.textSetCursor(100, 225);
   tft.textColor(RA8875_BLUE, RA8875_RED);
   tft.textEnlarge(3);  
   tft.textWrite(display_input);
   
-}
+} // End of scenarioOne() function
 
 /// SCENE: Starting
 // The following function simulates a "start-up routine" after submitting an answer to the startup screen
