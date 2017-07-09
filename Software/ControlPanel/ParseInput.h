@@ -73,12 +73,19 @@ int ParseInput(int mode, char KeyInput) {
       break;
     default: // Consolidate Input
       ConsolidateInput(KeyInput);
-      if (mode > 0) {
-        scenarioOne();
-      }
       break;
     
   } // End of KeyInput switch
+
+  switch (mode) {
+
+    case 1:
+      scenarioOne();
+      break;
+    default:
+      break;
+    
+  } // End of mode switch
 
   return mode;
   
