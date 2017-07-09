@@ -26,6 +26,28 @@ char    password_four[5]      = "*318";
 char    password_five[5]      = "###0";
 
 
+/// Scenario TWO
+// First password
+void scenarioTwo() {
+  
+  tft.fillScreen(RA8875_BLACK);
+  tft.textMode();
+  
+  char title[19] = "ENTER SEQUENCE 2:";
+  tft.textSetCursor(100, 150);
+  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textEnlarge(3);  
+  tft.textWrite(title);
+
+  char display_input[10];
+  user_input.toCharArray(display_input,10);
+  tft.textSetCursor(100, 225);
+  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textEnlarge(3);  
+  tft.textWrite(display_input);
+  
+} // End of scenarioOne() function
+
 /// Scenario ONE
 // First password
 void scenarioOne() {

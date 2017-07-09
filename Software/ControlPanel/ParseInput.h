@@ -48,6 +48,7 @@ int VerifyPassword(int mode, String user_input) {
       if (user_input.equals(password_one)) {
         Serial.println("Correct input, moving to mode = 2");
         // correct message
+        scenarioTwo();
         mode = 2;
       } else {
         Serial.println("Incorrect input, still in mode = 1");
@@ -101,6 +102,9 @@ int ParseInput(int mode, char KeyInput) {
 
     case 1:
       scenarioOne();
+      break;
+    case 2:
+      scenarioTwo();
       break;
     default:
       break;
