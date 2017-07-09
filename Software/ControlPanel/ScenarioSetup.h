@@ -28,7 +28,7 @@ char    password_five[5]      = "###0";
 
 /// Scenario TWO
 // First password
-void scenarioTwo() {
+void ScenarioTwo() {
   
   tft.fillScreen(RA8875_BLACK);
   tft.textMode();
@@ -50,7 +50,7 @@ void scenarioTwo() {
 
 /// Scenario ONE
 // First password
-void scenarioOne() {
+void ScenarioOne() {
   
   tft.fillScreen(RA8875_BLACK);
   tft.textMode();
@@ -72,7 +72,7 @@ void scenarioOne() {
 
 /// SCENE: Starting
 // The following function simulates a "start-up routine" after submitting an answer to the startup screen
-void loadingSequence() {
+void LoadingSequence() {
 
   //tft.fillScreen(RA8875_BLACK);
   tft.textMode();
@@ -101,6 +101,6 @@ void loadingSequence() {
     delay(200);
   } // End of loading graphics loop
 
-  scenarioOne();
+  //ScenarioOne();
   
 } // End of loadingSequence()
