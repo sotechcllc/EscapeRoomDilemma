@@ -6,6 +6,17 @@
  * Fluvio L Lobo Fenoglietto 06/24/2017 
  */
 
+//  Delete Entire Input
+//    The following fuction deletes the entire input string
+String DeleteInput(String user_input) {
+
+  //input_len = user_input.length();
+  //user_input.remove(input_len - 3);
+  //Serial.println(user_input);
+  user_input = "";
+  return user_input;
+  
+} // End of DeleteLastInput()
 
 //  Delete Last Input
 //    The following fuction deletes the last input on the string 
@@ -34,6 +45,14 @@ int VerifyPassword(int mode, String user_input) {
       break;
     case 1:
       Serial.println("mode = 1");
+      if (user_input.equals(password_one)) {
+        Serial.println("Correct input, moving to mode = 2");
+        // correct message
+        mode = 2;
+      } else {
+        Serial.println("Incorrect input, still in mode = 1");
+        Serial.println("Resetting user input...");
+      }
       break;
     case 2:
       Serial.println("mode = 2");
@@ -69,7 +88,8 @@ int ParseInput(int mode, char KeyInput) {
       user_input = DeleteLastInput(user_input);
       break;
     case 'A': // Submit Input
-      mode = VerifyPassword(mode, user_input);
+      mode = VerifyPassword(mode, user_input);      // Upon submission, the program compares the input with the hard-coded passwords
+      user_input = DeleteInput(user_input);         // Regardless of the correct/incorrect submission, the user input is deleted completely
       break;
     default: // Consolidate Input
       ConsolidateInput(KeyInput);
