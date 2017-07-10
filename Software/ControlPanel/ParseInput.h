@@ -48,7 +48,7 @@ int VerifyPassword(int mode, String user_input) {
       Serial.println("mode = 1");
       if (user_input.equals(password_one)) {
         Serial.println("Correct input, moving to mode = 2");
-        // correct message
+        CorrectSequence();
         ScenarioTwo();
         mode = 2;
       } else {

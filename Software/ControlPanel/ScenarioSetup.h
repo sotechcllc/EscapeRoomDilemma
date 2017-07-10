@@ -70,7 +70,37 @@ void ScenarioOne() {
   
 } // End of scenarioOne() function
 
-/// SCENE: Starting
+
+// Correct Screen
+//  The following function generates a momentary CORRECT message on the screen with a loading mechanic, similar to the Loading Screen function
+void CorrectSequence() {
+
+  tft.fillScreen(RA8875_BLACK);                             // Clear screen
+  tft.textMode();                                           // Enable text mode
+  
+  char title[9] = "CORRECT ";
+  tft.textSetCursor(200, 150);
+  tft.textColor(RA8875_RED, RA8875_GREEN);
+  tft.textEnlarge(3);  
+  tft.textWrite(title);
+
+  int horiz_shift = 32;
+  int horiz_pos = 200;
+  for (int i=0; i<8; i++) {
+    int new_horiz_pos = horiz_pos + horiz_shift*(i);
+    char loading_symbol[2] = "=";
+    tft.textSetCursor(new_horiz_pos, 225);
+    tft.textColor(RA8875_RED, RA8875_GREEN);
+    tft.textEnlarge(3);
+    tft.textWrite(loading_symbol);
+    delay(250);
+  } // End of loading graphics loop
+
+  //ScenarioOne();
+  
+} // End of CorrectSequence()
+
+/// Loading Sequence
 // The following function simulates a "start-up routine" after submitting an answer to the startup screen
 void LoadingSequence() {
 
