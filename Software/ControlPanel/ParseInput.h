@@ -58,6 +58,52 @@ int VerifyPassword(int mode, String user_input) {
       break;
     case 2:
       Serial.println("mode = 2");
+      if (user_input.equals(password_two)) {
+        Serial.println("Correct input, moving to mode = 3");
+        CorrectSequence();
+        ScenarioThree();
+        mode = 3;
+      } else {
+        Serial.println("Incorrect input, still in mode = 2");
+        Serial.println("Resetting user input...");
+      }
+      break;
+    case 3:
+      Serial.println("mode = 3");
+      if (user_input.equals(password_three)) {
+        Serial.println("Correct input, moving to mode = 4");
+        CorrectSequence();
+        ScenarioFour();
+        mode = 4;
+      } else {
+        Serial.println("Incorrect input, still in mode = 3");
+        Serial.println("Resetting user input...");
+      }
+      break;
+    case 4:
+      Serial.println("mode = 4");
+      if (user_input.equals(password_four)) {
+        Serial.println("Correct input, moving to mode = 5");
+        CorrectSequence();
+        ScenarioFive();
+        mode = 5;
+      } else {
+        Serial.println("Incorrect input, still in mode = 4");
+        Serial.println("Resetting user input...");
+      }
+      break;
+    case 5:
+      Serial.println("mode = 5");
+      if (user_input.equals(password_five)) {
+        Serial.println("Correct input, process completed");
+        // Design end sequence...
+        EndingSequence();
+        //ScenarioFour();
+        mode = 6;
+      } else {
+        Serial.println("Incorrect input, still in mode = 5");
+        Serial.println("Resetting user input...");
+      }
       break;
     
   } // End of Mode switch
@@ -106,6 +152,18 @@ int ParseInput(int mode, char KeyInput) {
       break;
     case 2:
       ScenarioTwo();
+      break;
+    case 3:
+      ScenarioThree();
+      break;
+    case 4:
+      ScenarioFour();
+      break;
+    case 5:
+      ScenarioFive();
+      break;
+    case 6:
+      EndingSequence();
       break;
     default:
       break;

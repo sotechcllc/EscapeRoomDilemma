@@ -21,10 +21,93 @@ int     input_len             = 0;
 String  password_zero         = "1";
 char    password_one[3]       = "29";
 char    password_two[4]       = "367";
-char    password_third[5]     = "2451";
+char    password_three[5]     = "2451";
 char    password_four[5]      = "*318";
 char    password_five[5]      = "###0";
 
+/// Ending Sequence
+// The following function simulates a "ending routine" after submitting the correct password to the last 
+void EndingSequence() {
+
+  tft.fillScreen(RA8875_RED);
+  tft.textMode();
+  
+  char title[19] = "SEQUENCE COMPLETED";
+  tft.textSetCursor(100, 200);
+  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textEnlarge(4);  
+  tft.textWrite(title);
+
+  delay(200);
+  
+} // End of loadingSequence()
+
+
+/// Scenario FIVE
+// Five password
+void ScenarioFive() {
+  
+  tft.fillScreen(RA8875_BLACK);
+  tft.textMode();
+  
+  char title[19] = "ENTER SEQUENCE 5:";
+  tft.textSetCursor(100, 150);
+  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textEnlarge(3);  
+  tft.textWrite(title);
+
+  char display_input[10];
+  user_input.toCharArray(display_input,10);
+  tft.textSetCursor(100, 225);
+  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textEnlarge(3);  
+  tft.textWrite(display_input);
+  
+} // End of ScenarioFive() function
+
+/// Scenario FOUR
+// Fourth password
+void ScenarioFour() {
+  
+  tft.fillScreen(RA8875_BLACK);
+  tft.textMode();
+  
+  char title[19] = "ENTER SEQUENCE 4:";
+  tft.textSetCursor(100, 150);
+  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textEnlarge(3);  
+  tft.textWrite(title);
+
+  char display_input[10];
+  user_input.toCharArray(display_input,10);
+  tft.textSetCursor(100, 225);
+  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textEnlarge(3);  
+  tft.textWrite(display_input);
+  
+} // End of ScenarioFour() function
+
+/// Scenario THREE
+// Third password
+void ScenarioThree() {
+  
+  tft.fillScreen(RA8875_BLACK);
+  tft.textMode();
+  
+  char title[19] = "ENTER SEQUENCE 3:";
+  tft.textSetCursor(100, 150);
+  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textEnlarge(3);  
+  tft.textWrite(title);
+
+  char display_input[10];
+  user_input.toCharArray(display_input,10);
+  tft.textSetCursor(100, 225);
+  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textEnlarge(3);  
+  tft.textWrite(display_input);
+  
+} // End of ScenarioThree() function
 
 /// Scenario TWO
 // First password
@@ -46,7 +129,7 @@ void ScenarioTwo() {
   tft.textEnlarge(3);  
   tft.textWrite(display_input);
   
-} // End of scenarioOne() function
+} // End of ScenarioTwo() function
 
 /// Scenario ONE
 // First password
@@ -68,14 +151,14 @@ void ScenarioOne() {
   tft.textEnlarge(3);  
   tft.textWrite(display_input);
   
-} // End of scenarioOne() function
+} // End of ScenarioOne() function
 
 
 // Correct Screen
 //  The following function generates a momentary CORRECT message on the screen with a loading mechanic, similar to the Loading Screen function
 void CorrectSequence() {
 
-  tft.fillScreen(RA8875_BLACK);                             // Clear screen
+  tft.fillScreen(RA8875_GREEN);                             // Clear screen
   tft.textMode();                                           // Enable text mode
   
   char title[9] = "CORRECT ";
@@ -104,7 +187,7 @@ void CorrectSequence() {
 // The following function simulates a "start-up routine" after submitting an answer to the startup screen
 void LoadingSequence() {
 
-  //tft.fillScreen(RA8875_BLACK);
+  tft.fillScreen(RA8875_RED);
   tft.textMode();
   
   char title[19] = "STARTING SEQUENCE ";
@@ -130,7 +213,5 @@ void LoadingSequence() {
     tft.textWrite(loading_symbol);
     delay(200);
   } // End of loading graphics loop
-
-  //ScenarioOne();
   
 } // End of loadingSequence()
