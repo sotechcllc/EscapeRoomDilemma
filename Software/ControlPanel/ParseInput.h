@@ -54,6 +54,7 @@ int VerifyPassword(int mode, String user_input) {
       } else {
         Serial.println("Incorrect input, still in mode = 1");
         Serial.println("Resetting user input...");
+        IncorrectSequence();
       }
       break;
     case 2:
@@ -66,6 +67,7 @@ int VerifyPassword(int mode, String user_input) {
       } else {
         Serial.println("Incorrect input, still in mode = 2");
         Serial.println("Resetting user input...");
+        IncorrectSequence();
       }
       break;
     case 3:
@@ -78,6 +80,7 @@ int VerifyPassword(int mode, String user_input) {
       } else {
         Serial.println("Incorrect input, still in mode = 3");
         Serial.println("Resetting user input...");
+        IncorrectSequence();
       }
       break;
     case 4:
@@ -90,6 +93,7 @@ int VerifyPassword(int mode, String user_input) {
       } else {
         Serial.println("Incorrect input, still in mode = 4");
         Serial.println("Resetting user input...");
+        IncorrectSequence();
       }
       break;
     case 5:
@@ -103,6 +107,7 @@ int VerifyPassword(int mode, String user_input) {
       } else {
         Serial.println("Incorrect input, still in mode = 5");
         Serial.println("Resetting user input...");
+        IncorrectSequence();
       }
       break;
     

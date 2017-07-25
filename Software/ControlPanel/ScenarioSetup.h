@@ -153,6 +153,32 @@ void ScenarioOne() {
   
 } // End of ScenarioOne() function
 
+// Incorrect Screen
+//  The following function generates a momentary CORRECT message on the screen with a loading mechanic, similar to the Loading Screen function
+void IncorrectSequence() {
+
+  tft.fillScreen(RA8875_RED);                             // Clear screen
+  tft.textMode();                                           // Enable text mode
+  
+  char title[11] = "INCORRECT ";
+  tft.textSetCursor(200, 150);
+  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textEnlarge(3);  
+  tft.textWrite(title);
+
+  int horiz_shift = 32;
+  int horiz_pos = 200;
+  for (int i=0; i<8; i++) {
+    int new_horiz_pos = horiz_pos + horiz_shift*(i);
+    char loading_symbol[2] = "=";
+    tft.textSetCursor(new_horiz_pos, 225);
+    tft.textColor(RA8875_BLUE, RA8875_RED);
+    tft.textEnlarge(3);
+    tft.textWrite(loading_symbol);
+    delay(150);
+  } // End of loading graphics loop
+
+} // End of CorrectSequence()
 
 // Correct Screen
 //  The following function generates a momentary CORRECT message on the screen with a loading mechanic, similar to the Loading Screen function
@@ -179,8 +205,6 @@ void CorrectSequence() {
     delay(250);
   } // End of loading graphics loop
 
-  //ScenarioOne();
-  
 } // End of CorrectSequence()
 
 /// Loading Sequence
