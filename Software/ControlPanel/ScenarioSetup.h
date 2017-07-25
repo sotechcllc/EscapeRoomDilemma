@@ -29,12 +29,12 @@ char    password_five[5]      = "###0";
 // The following function simulates a "ending routine" after submitting the correct password to the last 
 void EndingSequence() {
 
-  tft.fillScreen(RA8875_RED);
+  tft.fillScreen(RA8875_GREEN);
   tft.textMode();
   
   char title[19] = "SEQUENCE COMPLETED";
   tft.textSetCursor(100, 200);
-  tft.textColor(RA8875_BLUE, RA8875_RED);
+  tft.textColor(RA8875_RED, RA8875_GREEN);
   tft.textEnlarge(4);  
   tft.textWrite(title);
 
