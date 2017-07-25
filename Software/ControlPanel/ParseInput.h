@@ -152,6 +152,9 @@ int ParseInput(int mode, char KeyInput) {
 
   switch (mode) {
 
+    case 0:
+      InitScreen();
+      break;
     case 1:
       ScenarioOne();
       break;

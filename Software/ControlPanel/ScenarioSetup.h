@@ -153,6 +153,41 @@ void ScenarioOne() {
   
 } // End of ScenarioOne() function
 
+void InitScreen() {
+
+  tft.fillScreen(RA8875_MAGENTA);
+
+  /* Switch to text mode */  
+  tft.textMode();
+
+  /* Render some text! */
+  char title[15] = "SURGICAL UNIT ";
+  char instruction_zero[28] = "Begin Activation Sequence?";
+  char instruction_one[31] = "Y(1)/N(0) | ENTER(A)/DELETE(D)";
+
+  /* Change the cursor location and color ... */  
+  tft.textSetCursor(50, 100);
+  tft.textColor(RA8875_RED, RA8875_MAGENTA);
+  tft.textEnlarge(3);
+  tft.textWrite(title);
+  
+  tft.textSetCursor(50, 175);
+  tft.textEnlarge(2);
+  tft.textWrite(instruction_zero);
+
+  tft.textSetCursor(50, 225);
+  tft.textEnlarge(1);
+  tft.textWrite(instruction_one);
+
+  char display_input[10];
+  user_input.toCharArray(display_input,10);
+  tft.textSetCursor(50, 300);
+  tft.textColor(RA8875_RED, RA8875_BLUE);
+  tft.textEnlarge(3);  
+  tft.textWrite(display_input);
+  
+} // End of InitScreen()
+
 // Incorrect Screen
 //  The following function generates a momentary CORRECT message on the screen with a loading mechanic, similar to the Loading Screen function
 void IncorrectSequence() {
