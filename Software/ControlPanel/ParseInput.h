@@ -76,6 +76,7 @@ int VerifyPassword(int mode, String user_input) {
       Serial.println("mode = 3");
       if (user_input.equals(password_three)) {
         Serial.println("Correct input, moving to mode = 4");
+        digitalWrite(LED3, HIGH);
         CorrectSequence();
         ScenarioFour();
         mode = 4;
@@ -89,6 +90,7 @@ int VerifyPassword(int mode, String user_input) {
       Serial.println("mode = 4");
       if (user_input.equals(password_four)) {
         Serial.println("Correct input, moving to mode = 5");
+        digitalWrite(LED4, HIGH);
         CorrectSequence();
         ScenarioFive();
         mode = 5;
@@ -102,7 +104,7 @@ int VerifyPassword(int mode, String user_input) {
       Serial.println("mode = 5");
       if (user_input.equals(password_five)) {
         Serial.println("Correct input, process completed");
-        // Design end sequence...
+        digitalWrite(LED5, HIGH);
         EndingSequence();
         //ScenarioFour();
         mode = 6;
