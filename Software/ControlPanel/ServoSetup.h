@@ -21,11 +21,15 @@ void SetupServo() {
 		Serial.println("Closing door");
 		myservo.write(close_pos);
 		delay(1000);
+    myservo.detach();
 	}
 }
 
 void OpenDoor(){
+  myservo.attach(servo_pin);
+  delay(1000);
 	Serial.println("Opening door!");
 	myservo.write(0);
 	delay(1000);
+  myservo.detach();
 }
