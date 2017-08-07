@@ -38,6 +38,8 @@ void EndingSequence() {
   tft.textEnlarge(4);  
   tft.textWrite(title);
 
+  OpenDoor();
+
   delay(200);
   
 } // End of loadingSequence()

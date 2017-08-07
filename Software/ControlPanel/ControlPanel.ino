@@ -10,16 +10,17 @@
 
 /// Import Libraries and/or Modules
 #include "KeypadSetup.h"
+#include "ServoSetup.h"
 #include "Adafruit_RA8875Setup.h"
 #include "LEDSetup.h"
 #include "ParseInput.h"
-
 
 void setup() {
 
   Serial.begin(9600);                 // Setup serial communication
   RA8875Setup();                      // Setup screen
   LEDSetup();                         // Setup LEDs
+  SetupServo();                       // Setup Servo
 
 }
 
